@@ -8,6 +8,7 @@ $.getJSON('/articles', function(data) {
 
 $(document).on('click', 'p', function(){
   $('#notes').empty();
+  $('#allNotes').empty();
   var thisId = $(this).attr('data-id');
 
   $.ajax({
@@ -15,15 +16,21 @@ $(document).on('click', 'p', function(){
     url: "/articles/" + thisId,
   })
     .done(function( data ) {
-      console.log(data);
+      // console.log(data);
       $('#notes').append('<h2>' + data.title + '</h2>');
-      $('#notes').append('<input id="titleinput" name="title" >');
+      
       $('#notes').append('<textarea id="bodyinput" name="body"></textarea>');
+      $('#allNotes').append('<textarea id="noteResults" name="notebody"></textarea>');
       $('#notes').append('<button data-id="' + data._id + '" id="savenote">Save Note</button>');
 
       if(data.note){
-        $('#titleinput').val(data.note.title);
-        $('#bodyinput').val(data.note.body);
+        console.log("data.note.length = " + data.note.length);
+        for (var i = 0; i < data.note.length; i++) {
+          console.log( data.note[0].body );
+          $("#noteResults").prepend("<p class='dataentry' data-id=" + data.note[i]._id + "><span class='dataTitle' data-id=" +
+          data.note[i]._id + ">" + data.note[i].title + "</span><span class=deleter>X</span></p>");
+          // $('#bodyinput').val(data.note.body);
+        }
       }
     });
 });
@@ -53,7 +60,6 @@ $(document).on('click', '#savenote', function(){
     method: "POST",
     url: "/articles/" + thisId,
     data: {
-      title: $('#titleinput').val(),
       body: $('#bodyinput').val()
     }
   })
@@ -61,7 +67,7 @@ $(document).on('click', '#savenote', function(){
       console.log(data);
     //   $('#notes').empty();
     });
-      $('#titleinput').val("");
+      // $('#titleinput').val("");
       $('#bodyinput').val("");
     // });
 

@@ -102,7 +102,7 @@ router.post('/articles/:id', function(req, res) {
 		if (err) {
 			console.log(err);
 		} else {
-			Article.findOneAndUpdate({'_id': req.params.id}, {'note':doc._id})
+			Article.findOneAndUpdate({'_id': req.params.id},{$push: {'note':doc._id}},{new: true })
 			.exec(function(err, doc) {
 				if (err) {
 					console.log(err);
@@ -117,12 +117,3 @@ router.post('/articles/:id', function(req, res) {
 
 module.exports = router;
 
-// router.listen(3000, function() {
-// 	console.log('App running on port 3000');
-// });
-
-// MONGODB URI for documentation
-// 'mongodb://heroku_pvzdghgl:7ksb7uqr7nv73b2dc5pkgc0sul@ds013456.mlab.com:13456/heroku_pvzdghgl'
-
-//home route, take what get from mongo and render that with home template. in home template, need to have an {(#each article)} <br> {(this.title)} , and then render and send it
-// in home within articles div
