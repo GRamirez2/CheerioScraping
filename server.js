@@ -6,6 +6,7 @@ var logger = require('morgan');
 var mongoose = require('mongoose');
 var request = require('request');
 var exphbs = require('express-handlebars');
+var Nodemon = require("nodemon");
 
 // Use handlebars
 app.engine('handlebars', exphbs({defaultLayout: 'main'}));

@@ -1,21 +1,22 @@
 {
-  "name": "mongo_scrape",
+  "name": "CheerioScraping",
   "version": "1.0.0",
   "description": "",
   "main": "index.js",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "start": "node server.js"
   },
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/cshedd/mongo_scrape.git"
+    "url": "git+https://github.com/GRamirez2/CheerioScraping.git"
   },
   "author": "",
   "license": "ISC",
   "bugs": {
-    "url": "https://github.com/cshedd/mongo_scrape/issues"
+    "url": "https://github.com/GRamirez2/CheerioScraping/issues"
   },
-  "homepage": "https://github.com/cshedd/mongo_scrape#readme",
+  "homepage": "https://github.com/GRamirez2/CheerioScraping#readme",
   "dependencies": {
     "body-parser": "^1.15.2",
     "cheerio": "^0.20.0",
@@ -25,5 +26,8 @@
     "mongoose-unique-validator": "^1.0.3",
     "morgan": "^1.7.0",
     "request": "^2.74.0"
+  },
+  "devDependencies": {
+    "nodemon": "^1.11.0"
   }
 }
