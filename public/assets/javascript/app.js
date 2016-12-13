@@ -28,7 +28,7 @@ $(document).on('click', '.imgBox', function(){
       $('#notes').append('<button data-id="' + data._id + '" id="savenote">Save Note</button>');
       //print on modal footer
       $('.modal-footer').append('<hr><textarea id="bodyinput" name="body"></textarea>');
-      $('.modal-footer').append('<button data-id="' + data._id + '" id="savenote">Save Note</button>');
+      $('.modal-footer').append('<button data-id="' + data._id + '" id="savenote">Share Thoughts</button>');
       //create div for comments in modal body
       // $('.modal-body').append('<div id="noteResults" name="notebody"></div>');
 
@@ -111,11 +111,11 @@ function resetNotes(placeHolder){
       
       $('#notes').append('<textarea id="bodyinputX" name="body"></textarea>');
       $('#noteResults').append('<div id="noteResults" name="notebody"></div>');
-      $('#notes').append('<button data-id="' + data._id + '" id="savenote">Save Note</button>');
+      $('#notes').append('<button data-id="' + data._id + '" id="savenote">Share Thoughts</button>');
 
       //print on modal footer
       $('.modal-footer').append('<hr><textarea id="bodyinput" name="body"></textarea>');
-      $('.modal-footer').append('<button data-id="' + data._id + '" id="savenote">Save Note</button>');
+      $('.modal-footer').append('<button data-id="' + data._id + '" id="savenote">Share Thoughts</button>');
 
       if(data.note){
         // console.log("data.note.length = " + data.note.length);
