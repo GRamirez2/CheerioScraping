@@ -80,11 +80,25 @@ router.get('/articles/:id', function(req, res) {
 	});
 });
 
+// MY ORIGINAL DELETE ROUTE
+// router.post('/deletenote/:id', function(req, res) {
+// 	console.log(req.params.id);
+// 	Note.findOne({ '_id': req.params.id })
+// 	.remove('note')
+// 	.exec(function(err, doc) {
+// 		if (err) {
+// 			console.log(err);
+// 		} else {
+// 			res.json(doc);
+// 		}
+// 	});
+// });
+
 // Route to delete notes
-router.post('/deletenote/:id', function(req, res) {
+router.delete('/deletenote/:id', function(req, res) {
 	console.log(req.params.id);
-	Note.findOne({ '_id': req.params.id })
-	.remove('note')
+	Note.remove({ '_id': req.params.id })
+	// .remove('note')
 	.exec(function(err, doc) {
 		if (err) {
 			console.log(err);
@@ -93,6 +107,7 @@ router.post('/deletenote/:id', function(req, res) {
 		}
 	});
 });
+
 
 // Route to replace existing note of article with new one
 router.post('/articles/:id', function(req, res) {

@@ -1,8 +1,26 @@
- body { 
+      body { 
+        background-color: white;
+      }
+      button {
+          background-color: dodgerblue; /* Green */
+          border: none;
+          color: white;
+          padding: 15px 32px;
+          text-align: center;
+          text-decoration: none;
+          /*display: inline-block;*/
+          font-size: 16px;
+          margin: 4px 2px;
+          cursor: pointer;
+          -webkit-transition-duration: 0.4s; /* Safari */
+          transition-duration: 0.4s;
+          border-radius: 12px;
+          float: right;
+      }
 
-  background-color: white;
+      button:hover {
+          box-shadow: 0 12px 16px 0 rgba(0,0,0,0.24),0 17px 50px 0 rgba(0,0,0,0.19);
 }
-
       #wrapper {
         width: 960px;
         margin-left: auto;
@@ -12,17 +30,33 @@
       #articles {
         display: inline-block;
         overflow: auto;
-        width: 60%;
-        height: 700px;
+        width: 68%;
+        height: auto;
+      }
+      #sideNotes{
+        float:right;
+        width: 31%;
       }
       #notes {
-        float: right;
-        width: 30%;
+        /*float: right;*/
+        width: 100%;
       }
+      #noteResults {
+        /*float: right;*/
+        width: 100%;
+        padding-top: 75px;
+      }
+
+      .dataTitle {
+        width:304px; 
+        word-wrap:break-word;
+        line-height: 200%;
+      }
+
       textarea, input {
         display: block;
         width: 100%;
-        background-color: #FCF5C7;
+        background-color: white;
       }
       input {
         height: 36px;
@@ -32,3 +66,35 @@
         height: 200px;
         font-size: 18px;
       }
+      
+      .imgBox {
+        width: 650px;
+        float: left;
+        /*height: 322.25px;*/
+        cursor: pointer;
+      }
+      .img {
+        position: relative;
+        float: left;
+        width: 100%;
+        /*max-height: 250px;*/
+      }
+      
+      .titleText{
+        text-align: justify;
+      }
+
+      .deleteNote {
+      /*background: red;*/
+      color: red;
+      font-family: 'Helvetica', 'Arial', sans-serif;
+      font-size: 1.13em;
+      font-weight: bold;
+      /*text-align: center;*/
+      /*width: 20px;
+      height: 20px;*/
+      border-radius: 5px;
+      margin-left: 20px;
+      cursor: pointer;
+        
+    }
