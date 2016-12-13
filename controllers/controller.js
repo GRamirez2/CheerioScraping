@@ -11,7 +11,9 @@ var mongoose = require('mongoose');
 var cheerio = require('cheerio');
 
 // Database configuration with mongoose  (this is where mongo URI goes)
-mongoose.connect('mongodb://localhost/scrapeDB' || 'mongodb://heroku_2gr2hrvz:qu90mv97r3n4nqunrcn968sikr@ds133348.mlab.com:33348/heroku_2gr2hrvz');
+// 'mongodb://localhost/scrapeDB' || 
+mongoose.connect(
+	'mongodb://heroku_2gr2hrvz:qu90mv97r3n4nqunrcn968sikr@ds133348.mlab.com:33348/heroku_2gr2hrvz');
 var db = mongoose.connection;
 
 // Show any mongoose errors
